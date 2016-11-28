@@ -61,7 +61,7 @@ public class GoogleMaps : MonoBehaviour {
 	IEnumerator getLatLong(string p_address){
 
 		Debug.Log ("Entered function");
-		string pbUrl = "https://api.pitneybowes.com/location-intelligence/geocode-service/v1/transient/basic/geocode?mainAddress\n=SANTA ANA&country=Mex&areaName1=DISTRITOFEDERAL&postalCode=44910HTTP/1.1%";
+		string pbUrl = "https://api.pitneybowes.com/location-intelligence/geocode-service/v1/transient/basic/geocode?mainAddress\n="+p_address+"&country=Usa&areaName1=DISTRITOFEDERAL&postalCode=44910HTTP/1.1%";
 
 
 		//WWWForm webForm = new WWWForm ();
@@ -79,6 +79,9 @@ public class GoogleMaps : MonoBehaviour {
 		Debug.Log ("Processed request");
 		//getWWW.
 		Debug.Log (getWWW.bytesDownloaded);
+		//string coordinates = getWWW.responseHeaders["Coordinates"];
+		//targetLat = float.Parse(coordinates.Split(":")[0]);
+		//targetLong = float.Parse(coordinates.Split(":")[1]);
  	}
 
 
